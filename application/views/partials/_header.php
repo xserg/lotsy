@@ -63,7 +63,7 @@ foreach ($this->languages as $language): ?>
     <link rel="stylesheet" href="<?= base_url(); ?>assets/vendor/font-icons/css/mds-icons.min.css"/>
     <?= !empty($this->fonts->site_font_url) ? $this->fonts->site_font_url : ''; ?>
     <link rel="stylesheet" href="<?= base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/style-2.0.min.css"/>
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/lotsy.css"/>
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/plugins-2.0.css"/>
     <?php $this->load->view("partials/_css_js_header"); ?>
     <?php if ($this->rtl == true): ?>
