@@ -2546,7 +2546,7 @@ img {
 
 /*Slider End*/
 .section-categories {
-    margin-bottom: 30px;
+    margin-bottom: 0px;
 }
 
 .featured-categories .card-columns {
@@ -2578,10 +2578,11 @@ img {
 }
 
 .featured-categories .card .caption {
-    width: auto;
     padding: 8px 20px;
     position: absolute;
     bottom: 0;
+    text-align: center;
+    width: 100%;
 }
 
 .featured-categories .card .caption span {
