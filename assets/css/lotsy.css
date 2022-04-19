@@ -2546,6 +2546,7 @@ img {
 
 /*Slider End*/
 .section-categories {
+    margin-top: 0px;
     margin-bottom: 0px;
 }
 
@@ -2554,6 +2555,7 @@ img {
     -moz-column-gap: 20px;
     column-gap: 20px;
     column-count: 6;
+    margin-top: 10px;
 }
 
 .featured-categories .card-columns .card {
