@@ -2565,7 +2565,7 @@ img {
     background-size: contain;
     overflow: hidden;
     border-radius: 0 !important;
-    height: 190px;
+    height: 210px;
     border: 0 !important;
     margin-bottom: 15px;
 }
@@ -2580,9 +2580,9 @@ img {
 }
 
 .featured-categories .card .caption {
-    padding: 8px 20px;
+    padding: 0px 0px;
     position: absolute;
-    bottom: 0;
+    top: 170px;
     text-align: center;
     width: 100%;
 }
@@ -8873,7 +8873,7 @@ img {
     line-height: 40px;
     display: block;
     text-align: center;
-    background-color: #222;
+    background-color: #071675;
     border-radius: 0.1875rem;
     z-index: 999999
 }
@@ -10427,7 +10427,7 @@ form select.error {
     }
 
     .featured-categories .card-columns .card {
-        height: 165px !important;
+        height: 165px;
     }
 }
 
