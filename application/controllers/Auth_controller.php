@@ -324,7 +324,12 @@ class Auth_controller extends Home_Core_Controller
         //validate inputs
         $this->form_validation->set_rules('username', trans("username"), 'required|min_length[4]|max_length[100]');
         $this->form_validation->set_rules('email', trans("email_address"), 'required|max_length[200]');
-        $this->form_validation->set_rules('password', trans("password"), 'required|min_length[4]|max_length[255]');
+        
+        $this->form_validation->set_rules(
+          'password', 
+          trans("password"), 
+          'required|min_length[4]|max_length[255]|xss_clean|callback_is_password_strong'
+        );
         $this->form_validation->set_rules('confirm_password', trans("password_confirm"), 'required|matches[password]');
 
         if ($this->form_validation->run() === false) {
@@ -524,5 +529,14 @@ class Auth_controller extends Home_Core_Controller
         echo json_encode($data);
         reset_flash_data();
         $this->auth_model->send_email_activation($user_id, $token);
+    }
+    
+    public function is_password_strong($str)
+    {
+       if (preg_match('#[0-9]#', $str) && preg_match('#[a-zA-Z]#', $str)) {
+         return TRUE;
+       }
+       $this->form_validation->set_message('is_password_strong', 'The password field must be contains at least one letter and one digit.');
+       return FALSE;
     }
 }
