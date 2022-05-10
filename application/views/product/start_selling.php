@@ -77,7 +77,19 @@
 
                                                     <div class="form-group">
                                                         <label class="control-label"><?php echo trans('location'); ?></label>
-                                                        <?php $this->load->view("partials/_location", ['countries' => $this->countries, 'country_id' => $this->auth_user->country_id, 'state_id' => $this->auth_user->state_id, 'city_id' => $this->auth_user->city_id, 'map' => false]); ?>
+                                                        <?php                                 
+                                                        $country = $this->countries[180];
+                                                        $this->countries = [$country];
+                                                        //print_r($this->countries);
+                                                        //$this->auth_user->country_id = 181;
+                                                        $this->load->view(
+                                                          "partials/_location", 
+                                                          ['countries' => $this->countries, 
+                                                          'country_id' => $this->auth_user->country_id, 
+                                                          'state_id' => $this->auth_user->state_id, 
+                                                          'city_id' => $this->auth_user->city_id, 
+                                                          'map' => false]
+                                                        );
                                                     </div>
                                                     <?php if ($this->general_settings->request_documents_vendors == 1): ?>
                                                         <div class="form-group">
