@@ -2,7 +2,7 @@
 <?php if (!empty($countries)): ?>
     <div class="row">
         <div class="col-12 col-sm-4 m-b-15">
-            <select id="select_countries" name="country_id" class="select2 form-control" onchange="get_states(this.value, '<?php echo $map; ?>');" required>
+            <select id="select_countries" name="country_id" class="select form-control" onchange="get_states(this.value, '<?php echo $map; ?>');" required>
                 <option value=""><?php echo trans('country'); ?></option>
                 <?php foreach ($this->countries as $item):
                     if (!empty($country_id)): ?>
@@ -14,7 +14,7 @@
             </select>
         </div>
         <div id="get_states_container" class="col-12 col-sm-4 m-b-15 <?php echo (!empty($state_id)) ? '' : 'display-none'; ?>">
-            <select id="select_states" name="state_id" class="select2 form-control" onchange="get_cities(this.value, '<?php echo $map; ?>');">
+            <select id="select_states" name="state_id" class="select form-control" onchange="get_cities(this.value, '<?php echo $map; ?>');">
                 <option value=""><?php echo trans('state'); ?></option>
                 <?php if (!empty($states)):
                     foreach ($states as $item):
@@ -28,7 +28,7 @@
             </select>
         </div>
         <div id="get_cities_container" class="col-12 col-sm-4 m-b-15 <?php echo (!empty($cities)) ? '' : 'display-none'; ?>">
-            <select id="select_cities" name="city_id" class="select2 form-control" <?php echo (!empty($map)) ? 'onchange="update_product_map();"' : ''; ?>>
+            <select id="select_cities" name="city_id" class="select form-control" <?php echo (!empty($map)) ? 'onchange="update_product_map();"' : ''; ?>>
                 <option value=""><?php echo trans('city'); ?></option>
                 <?php if (!empty($cities)):
                     foreach ($cities as $item):

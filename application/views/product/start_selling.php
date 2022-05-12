@@ -77,9 +77,9 @@
 
                                                     <div class="form-group">
                                                         <label class="control-label"><?php echo trans('location'); ?></label>
-                                                        <?php                                 
-                                                        $country = $this->countries[180];
-                                                        $this->countries = [$country];
+                                                        <?php 
+                                                        //print_r($this->countries);                                
+                                                        $this->countries = [180 => $this->countries[180]];
                                                         //print_r($this->countries);
                                                         //$this->auth_user->country_id = 181;
                                                         $this->load->view(
@@ -90,6 +90,7 @@
                                                           'city_id' => $this->auth_user->city_id, 
                                                           'map' => false]
                                                         );
+                                                        ?>
                                                     </div>
                                                     <?php if ($this->general_settings->request_documents_vendors == 1): ?>
                                                         <div class="form-group">
@@ -117,7 +118,7 @@
 
                                             <div class="form-group m-t-15">
                                                 <div class="custom-control custom-checkbox custom-control-validate-input">
-                                                    <input type="checkbox" class="custom-control-input" name="terms_conditions" id="terms_conditions" value="1" required>
+                                                    <input type="checkbox" class="custom-control-input" name="terms_conditions" id="terms_conditions" value="1">
                                                     <label for="terms_conditions" class="custom-control-label"><?php echo trans("terms_conditions_exp"); ?>&nbsp;
                                                         <?php $page_terms = get_page_by_default_name("terms_conditions", $this->selected_lang->id);
                                                         if (!empty($page_terms)): ?>

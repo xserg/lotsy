@@ -9099,7 +9099,7 @@ img {
 
 form label.error {
     color: #d43f3a;
-    display: none !important;
+    display: none;
 }
 
 form input.error {
