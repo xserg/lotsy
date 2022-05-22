@@ -70,7 +70,7 @@
                                                             </div>
                                                             <div class="col-12 col-sm-4 m-b-15">
                                                                 <label class="control-label"><?php echo trans("phone_number"); ?></label>
-                                                                <input type="text" name="phone_number" class="form-control form-input" value="<?php echo html_escape($this->auth_user->phone_number); ?>" placeholder="<?php echo trans("phone_number"); ?>" required>
+                                                                <input type="text" name="phone_number" class="form-control form-input" value="<?php echo html_escape($this->auth_user->phone_number); ?>" placeholder="<?php echo trans("phone_number"); ?>">
                                                             </div>
                                                         </div>
                                                     </div>

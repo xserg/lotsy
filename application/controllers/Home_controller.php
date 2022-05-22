@@ -515,7 +515,8 @@ class Home_controller extends Home_Core_Controller
         $data['lang_settings'] = lang_settings();
         $data["states"] = $this->location_model->get_states_by_country($this->auth_user->country_id);
         $data["cities"] = $this->location_model->get_cities_by_state($this->auth_user->state_id);
-
+        
+        
         $this->load->view('partials/_header', $data);
         $this->load->view('product/start_selling', $data);
         $this->load->view('partials/_footer');
@@ -544,6 +545,22 @@ class Home_controller extends Home_Core_Controller
             'is_active_shop_request' => 1
         );
 
+        $this->form_validation->set_rules('phone_number', trans("phone_number"), 
+        'required|numeric|max_length[10]',
+        array('numeric' => trans('form_validation_numeric'))
+        );        
+        $this->form_validation->set_rules('first_name', trans("first_name"),
+         'required|min_length[3]|callback_name_format');
+         $this->form_validation->set_rules('last_name', trans("last_name"),
+          'required|min_length[3]|callback_name_format');
+  
+        if ($this->form_validation->run() === false) {
+            $this->session->set_flashdata('errors', validation_errors());
+            $this->session->set_flashdata('form_data', $this->auth_model->input_values());
+            //$this->session->set_flashdata('form_data', $data);
+            redirect($this->agent->referrer());
+        } else {
+        
         //is shop name unique
         if (!$this->auth_model->is_unique_shop_name($data['shop_name'], $this->auth_user->id)) {
             $this->session->set_flashdata('form_data', $data);
@@ -618,6 +635,8 @@ class Home_controller extends Home_Core_Controller
                 redirect($this->agent->referrer());
             }
         }
+        
+      }
     }
 
     /**
@@ -974,6 +993,15 @@ class Home_controller extends Home_Core_Controller
         $this->load->view('partials/_header', $data);
         $this->load->view('errors/error_404');
         $this->load->view('partials/_footer');
+    }
+    
+    public function name_format($str)
+    {
+       if ( preg_match("/^[a-zA-Zа-яА-Я-.\']+$/u", $str) ) {
+         return TRUE;
+       }
+       $this->form_validation->set_message('name_format', trans('form_validation_regex_match'));
+       return FALSE;
     }
 
 }
