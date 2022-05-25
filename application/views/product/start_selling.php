@@ -55,22 +55,22 @@
 
                                                     <div class="form-group">
                                                         <label class="control-label"><?php echo trans("shop_name"); ?></label>
-                                                        <input type="text" name="shop_name" class="form-control form-input" value="<?php echo $this->auth_user->username; ?>" placeholder="<?php echo trans("shop_name"); ?>" maxlength="<?php echo $this->username_maxlength; ?>" required>
+                                                        <input type="text" name="shop_name" class="form-control form-input" value="<?php echo $this->auth_user->username; ?>" placeholder="<?php echo trans("shop_name"); ?>" maxlength="<?php echo $this->username_maxlength; ?>">
                                                     </div>
 
                                                     <div class="form-group">
                                                         <div class="row">
                                                             <div class="col-12 col-sm-4 m-b-15">
                                                                 <label class="control-label"><?php echo trans("first_name"); ?></label>
-                                                                <input type="text" name="first_name" class="form-control form-input" value="<?php echo html_escape($this->auth_user->first_name); ?>" placeholder="<?php echo trans("first_name"); ?>" required>
+                                                                <input type="text" name="first_name" class="form-control form-input" value="<?php echo html_escape($first_name); ?>" placeholder="<?php echo trans("first_name"); ?>">
                                                             </div>
                                                             <div class="col-12 col-sm-4 m-b-15">
                                                                 <label class="control-label"><?php echo trans("last_name"); ?></label>
-                                                                <input type="text" name="last_name" class="form-control form-input" value="<?php echo html_escape($this->auth_user->last_name); ?>" placeholder="<?php echo trans("last_name"); ?>" required>
+                                                                <input type="text" name="last_name" class="form-control form-input" value="<?php echo html_escape($last_name); ?>" placeholder="<?php echo trans("last_name"); ?>">
                                                             </div>
                                                             <div class="col-12 col-sm-4 m-b-15">
                                                                 <label class="control-label"><?php echo trans("phone_number"); ?></label>
-                                                                <input type="text" name="phone_number" class="form-control form-input" value="<?php echo html_escape($this->auth_user->phone_number); ?>" placeholder="<?php echo trans("phone_number"); ?>">
+                                                                <input type="text" name="phone_number" class="form-control form-input" value="<?php echo html_escape($phone_number); ?>" placeholder="<?php echo trans("phone_number"); ?>">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -85,9 +85,9 @@
                                                         $this->load->view(
                                                           "partials/_location", 
                                                           ['countries' => $this->countries, 
-                                                          'country_id' => $this->auth_user->country_id, 
-                                                          'state_id' => $this->auth_user->state_id, 
-                                                          'city_id' => $this->auth_user->city_id, 
+                                                          'country_id' => $country_id, 
+                                                          'state_id' => $state_id, 
+                                                          'city_id' => $city_id, 
                                                           'map' => false]
                                                         );
                                                         ?>
