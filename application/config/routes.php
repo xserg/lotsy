@@ -102,7 +102,7 @@ foreach ($languages as $language) {
         /*product*/
         $route[$key . getr('select_membership_plan', $rts)]['GET'] = 'home_controller/renew_membership_plan';
         $route[$key . getr('start_selling', $rts) . '/' . getr('select_membership_plan', $rts)]['GET'] = 'home_controller/select_membership_plan';
-        $route[$key . getr('start_selling', $rts)]['GET'] = 'home_controller/start_selling';
+        $route[$key . getr('start_selling', $rts)] = 'home_controller/start_selling';        
         $route[$key . getr('search', $rts)]['GET'] = 'home_controller/search';
         $route[$key . getr('products', $rts)]['GET'] = 'home_controller/products';
         $route[$key . getr('downloads', $rts)]['GET'] = 'profile_controller/downloads';

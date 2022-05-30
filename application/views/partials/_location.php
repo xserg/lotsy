@@ -2,7 +2,7 @@
 <?php if (!empty($countries)): ?>
     <div class="row">
         <div class="col-12 col-sm-4 m-b-15">
-            <select id="select_countries" name="country_id" class="select form-control" onchange="get_states(this.value, '<?php echo $map; ?>');" required>
+            <select id="select_countries" name="country_id" class="select form-control" onchange="get_states(this.value, '<?php echo $map; ?>');">
                 <option value=""><?php echo trans('country'); ?></option>
                 <?php foreach ($this->countries as $item):
                     if (!empty($country_id)): ?>

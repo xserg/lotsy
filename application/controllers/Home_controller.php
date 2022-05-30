@@ -480,7 +480,7 @@ class Home_controller extends Home_Core_Controller
     /**
      * Start Selling
      */
-    public function start_selling()
+    public function start_selling_org()
     {
         get_method();
         //check auth
@@ -532,13 +532,26 @@ class Home_controller extends Home_Core_Controller
     /**
      * Start Selling Post
      */
-    public function start_selling_post()
+    public function start_selling()
     {
-        post_method();
-        //check auth
+        //post_method();
+        //check auth  
         if (!$this->auth_check) {
             redirect(lang_base_url());
         }
+        if (is_vendor()) {
+            redirect(lang_base_url());
+        }
+        if ($this->general_settings->email_verification == 1 && $this->auth_user->email_status != 1) {
+            $this->session->set_flashdata('error', trans("msg_confirmed_required"));
+            redirect(generate_url("settings", "update_profile"));
+        }
+
+        $data['title'] = trans("start_selling");
+        $data['description'] = trans("start_selling") . " - " . $this->app_name;
+        $data['keywords'] = trans("start_selling") . "," . $this->app_name;
+        
+        
         $data = array(
             'shop_name' => remove_special_characters($this->input->post('shop_name', true)),
             'first_name' => $this->input->post('first_name', true),
@@ -551,13 +564,26 @@ class Home_controller extends Home_Core_Controller
             'vendor_documents' => "",
             'is_active_shop_request' => 1
         );
-
+        
+        if (!$_POST) {
+          $data['lang_settings'] = lang_settings();
+          $data["states"] = $this->location_model->get_states_by_country($this->auth_user->country_id);
+          $data["cities"] = $this->location_model->get_cities_by_state($this->auth_user->state_id);
+          $data["first_name"] = $this->auth_user->first_name;
+            $data['shop_name'] = $this->auth_user->shop_name;
+            $data['last_name'] = $this->auth_user->last_name;
+            $data['phone_number'] = $this->auth_user->phone_number;
+            $data['country_id'] = $this->auth_user->country_id;
+            $data['state_id'] = $this->auth_user->state_id;
+            $data['city_id'] = $this->auth_user->city_id;
+        }
+        
         $this->form_validation->set_rules('phone_number', trans("phone_number"), 
         'required|numeric|max_length[10]',
         array('numeric' => trans('form_validation_numeric'))
         );
         $this->form_validation->set_rules('shop_name', trans("shop_name"), 'required');
-        $this->form_validation->set_rules('country_id', trans("country_id"), 'required');
+        $this->form_validation->set_rules('country_id', trans("location"), 'required');
         $this->form_validation->set_rules('first_name', trans("first_name"), 'required');        
         $this->form_validation->set_rules('first_name', trans("first_name"), 'min_length[3]|callback_name_format');
         $this->form_validation->set_rules('last_name', trans("last_name"),
@@ -1013,7 +1039,7 @@ class Home_controller extends Home_Core_Controller
         $this->form_validation->set_message('name_format', trans('form_validation_required'));
          return FALSE; 
        }
-       if ( preg_match("/^[a-zA-Zа-яА-Я-.\']+$/u", $str) ) {
+       if ( preg_match("/^[a-zA-Zа-яА-Я-.\' ]+$/u", $str) ) {
          return TRUE;
        }
        $this->form_validation->set_message('name_format', trans('form_validation_regex_match'));
