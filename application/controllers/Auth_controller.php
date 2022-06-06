@@ -535,8 +535,7 @@ class Auth_controller extends Home_Core_Controller
     
     public function is_password_strong($str)
     {
-      
-       if (preg_match('#^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[\d])\S*$#', $str)) {
+       if (preg_match('#^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[^a-zA-Z_\n])\S*$#', $str)) {
          return TRUE;
        }
        $this->form_validation->set_message('is_password_strong', trans('is_password_strong'));
