@@ -552,7 +552,7 @@ class Home_controller extends Home_Core_Controller
         $data['keywords'] = trans("start_selling") . "," . $this->app_name;
         
         
-        $data = array(
+        $data += array(
             'shop_name' => remove_special_characters($this->input->post('shop_name', true)),
             'first_name' => $this->input->post('first_name', true),
             'last_name' => $this->input->post('last_name', true),

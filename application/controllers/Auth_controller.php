@@ -324,7 +324,9 @@ class Auth_controller extends Home_Core_Controller
         //validate inputs
         $this->form_validation->set_rules('username', trans("username"), 'required|min_length[4]|max_length[100]');
         $this->form_validation->set_rules('email', trans("email_address"), 'required|max_length[200]');
-        
+            
+        $this->form_validation->set_rules('first_name', trans("first_name"), 'required|min_length[3]|callback_name_format');
+        $this->form_validation->set_rules('last_name', trans("last_name"), 'required|min_length[3]|callback_name_format');
         $this->form_validation->set_rules(
           'password', 
           trans("password"), 
@@ -533,10 +535,24 @@ class Auth_controller extends Home_Core_Controller
     
     public function is_password_strong($str)
     {
-       if (preg_match('#[0-9]#', $str) && preg_match('#[a-zA-Z]#', $str)) {
+      
+       if (preg_match('#^\S*(?=\S{8,})(?=\S*[\w])(?=\S*[\d|\W])\S*$#', $str)) {
          return TRUE;
        }
-       $this->form_validation->set_message('is_password_strong', 'The password field must be contains at least one letter and one digit.');
+       $this->form_validation->set_message('is_password_strong', trans('is_password_strong'));
+       return FALSE;
+    }
+    
+    public function name_format($str)
+    {
+       if (empty($str)) {
+        $this->form_validation->set_message('name_format', trans('form_validation_required'));
+         return FALSE; 
+       }
+       if ( preg_match("/^[a-zA-Zа-яА-Я-.\' ]+$/u", $str) ) {
+         return TRUE;
+       }
+       $this->form_validation->set_message('name_format', trans('form_validation_regex_match'));
        return FALSE;
     }
 }

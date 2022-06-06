@@ -39,7 +39,7 @@
                             <input type="email" name="email" class="form-control auth-form-input" placeholder="<?php echo trans("email_address"); ?>" value="<?php echo old("email"); ?>" maxlength="255" required>
                         </div>
                         <div class="form-group">
-                            <input type="password" name="password" class="form-control auth-form-input" placeholder="<?php echo trans("password"); ?>" value="<?php echo old("password"); ?>" minlength="4" maxlength="255" required>
+                            <input type="password" name="password" class="form-control auth-form-input" placeholder="<?php echo trans("password"); ?>" value="<?php echo old("password"); ?>" minlength="8" maxlength="255" required>
                         </div>
                         <div class="form-group">
                             <input type="password" name="confirm_password" class="form-control auth-form-input" placeholder="<?php echo trans("password_confirm"); ?>" maxlength="255" required>
