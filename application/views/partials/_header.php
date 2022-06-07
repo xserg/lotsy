@@ -232,12 +232,13 @@ foreach ($this->languages as $language): ?>
                         <!-- include message block -->
                         <div id="result-login" class="font-size-13"></div>
                         <div class="form-group">
-                            <input type="email" name="email" class="form-control auth-form-input" placeholder="<?php echo trans("email_address"); ?>" maxlength="255" required>
+                            <input type="text" name="email" class="form-control auth-form-input" placeholder="<?php echo trans("email"); ?> / <?php echo trans("username"); ?>" maxlength="255" required>
                         </div>
                         <div class="form-group">
-                            <input type="password" name="password" class="form-control auth-form-input" placeholder="<?php echo trans("password"); ?>" minlength="4" maxlength="255" required>
+                            <input type="password" id="password" name="password" class="form-control auth-form-input" placeholder="<?php echo trans("password"); ?>" minlength="4" maxlength="255" required>
+                            <i class="icon-eye close" id="togglePassword"></i>
                         </div>
-                        <div class="form-group text-right">
+                        <div class="form-group text-right">   
                             <a href="<?php echo generate_url("forgot_password"); ?>" class="link-forgot-password"><?php echo trans("forgot_password"); ?></a>
                         </div>
                         <div class="form-group">

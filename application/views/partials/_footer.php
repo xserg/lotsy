@@ -134,7 +134,7 @@
 <script src="<?= base_url(); ?>assets/js/jquery-3.5.1.min.js"></script>
 <script src="<?= base_url(); ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="<?= base_url(); ?>assets/js/plugins-2.0.js"></script>
-<script src="<?= base_url(); ?>assets/js/script-2.0.min.js"></script>
+<script src="<?= base_url(); ?>assets/js/script-2.0.js"></script>
 <?php if (!empty($this->session->userdata('mds_send_email_data'))): ?>
     <script>$(document).ready(function () {
             var data = JSON.parse(<?= json_encode($this->session->userdata("mds_send_email_data"));?>);
