@@ -2,7 +2,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Location_model extends CI_Model
-{
+{  
     //add country
     public function add_country()
     {
@@ -58,6 +58,9 @@ class Location_model extends CI_Model
         if (!empty($result)) {
             return $result;
         }
+        if($this->selected_lang->id == 2) {
+          $this->db->select('id, name_rus name');
+        }
         $this->db->where('status', 1)->order_by('name');
         $result = $this->db->get('location_countries')->result();
 
@@ -68,6 +71,9 @@ class Location_model extends CI_Model
     //get countries
     public function get_countries()
     {
+      if($this->selected_lang->id == 2) {
+        $this->db->select('id, name_rus name');
+      }
         $this->db->order_by('name');
         $query = $this->db->get('location_countries');
         return $query->result();
@@ -140,6 +146,9 @@ class Location_model extends CI_Model
     //get states
     public function get_states()
     {
+      if($this->selected_lang->id == 2) {
+        $this->db->select('id, country_id, name_rus name');
+      }
         $this->db->order_by('name');
         $query = $this->db->get('location_states');
         return $query->result();
@@ -199,7 +208,11 @@ class Location_model extends CI_Model
 
     //get states by country
     public function get_states_by_country($country_id)
-    {
+    {      
+        
+        if($this->selected_lang->id == 2) {
+            $this->db->select('id, country_id, name_rus name');
+        }
         $this->db->where('country_id', clean_number($country_id));
         $this->db->order_by('name');
         $query = $this->db->get('location_states');
@@ -324,6 +337,9 @@ class Location_model extends CI_Model
     //get cities by state
     public function get_cities_by_state($state_id)
     {
+      if($this->selected_lang->id == 2) {
+        $this->db->select('id, country_id, name_rus name');
+      }
         $this->db->where('location_cities.state_id', clean_number($state_id));
         $this->db->order_by('location_cities.name');
         $query = $this->db->get('location_cities');

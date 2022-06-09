@@ -78,10 +78,12 @@
                                                     <div class="form-group">
                                                         <label class="control-label"><?php echo trans('location'); ?></label>
                                                         <?php 
-                                                        //print_r($this->countries);                                
-                                                        $this->countries = [180 => $this->countries[180]];
-                                                        //print_r($this->countries);
-                                                        //$this->auth_user->country_id = 181;
+                                                        foreach ($this->countries as $country) {
+                                                           if ($country->id == 181) {
+                                                              $this->countries = [$country];
+                                                              break;
+                                                           }
+                                                        }                              
                                                         $this->load->view(
                                                           "partials/_location", 
                                                           ['countries' => $this->countries, 
