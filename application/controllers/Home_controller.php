@@ -545,14 +545,9 @@ class Home_controller extends Home_Core_Controller
         if ($this->general_settings->email_verification == 1 && $this->auth_user->email_status != 1) {
             $this->session->set_flashdata('error', trans("msg_confirmed_required"));
             redirect(generate_url("settings", "update_profile"));
-        }
-
-        $data['title'] = trans("start_selling");
-        $data['description'] = trans("start_selling") . " - " . $this->app_name;
-        $data['keywords'] = trans("start_selling") . "," . $this->app_name;
+        }      
         
-        
-        $data += array(
+        $data = array(
             'shop_name' => remove_special_characters($this->input->post('shop_name', true)),
             'first_name' => $this->input->post('first_name', true),
             'last_name' => $this->input->post('last_name', true),
@@ -566,6 +561,10 @@ class Home_controller extends Home_Core_Controller
         );
         
         if (!$_POST) {
+          $data['title'] = trans("start_selling");
+          $data['description'] = trans("start_selling") . " - " . $this->app_name;
+          $data['keywords'] = trans("start_selling") . "," . $this->app_name;
+          
           $data['lang_settings'] = lang_settings();
           $data["states"] = $this->location_model->get_states_by_country($this->auth_user->country_id);
           $data["cities"] = $this->location_model->get_cities_by_state($this->auth_user->state_id);
