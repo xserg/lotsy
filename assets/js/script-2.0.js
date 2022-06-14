@@ -2283,7 +2283,7 @@ togglePassword.addEventListener("click", function () {
     password.setAttribute("type", type);
     
     // toggle the icon
-    this.classList.toggle("open");
+    this.classList.toggle("fa-eye-slash");
 });
 
 // prevent form submit

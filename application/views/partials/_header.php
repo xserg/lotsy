@@ -60,6 +60,7 @@
 foreach ($this->languages as $language): ?>
     <link rel="alternate" href="<?= convert_url_by_language($language); ?>" hreflang="<?= $language->language_code ?>"/>
 <?php endforeach; endif; ?>
+<link rel="stylesheet" href="<?= base_url(); ?>assets/admin/vendor/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/vendor/font-icons/css/mds-icons.min.css"/>
     <?= !empty($this->fonts->site_font_url) ? $this->fonts->site_font_url : ''; ?>
     <link rel="stylesheet" href="<?= base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css"/>
@@ -232,11 +233,11 @@ foreach ($this->languages as $language): ?>
                         <!-- include message block -->
                         <div id="result-login" class="font-size-13"></div>
                         <div class="form-group">
-                            <input type="text" name="email" class="form-control auth-form-input" placeholder="<?php echo trans("email"); ?> / <?php echo trans("username"); ?>" maxlength="255" required>
+                            <input type="text" name="email" class="form-control auth-form-input" placeholder="<?php echo trans("username"); ?> / <?php echo trans("email"); ?>" maxlength="255" required>
                         </div>
                         <div class="form-group">
                             <input type="password" id="password" name="password" class="form-control auth-form-input" placeholder="<?php echo trans("password"); ?>" minlength="4" maxlength="255" required>
-                            <i class="icon-eye close" id="togglePassword"></i>
+                            <i class="fa fa-eye" id="togglePassword"></i>            
                         </div>
                         <div class="form-group text-right">   
                             <a href="<?php echo generate_url("forgot_password"); ?>" class="link-forgot-password"><?php echo trans("forgot_password"); ?></a>

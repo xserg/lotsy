@@ -7313,6 +7313,13 @@ img {
     right: 15px;
 }
 
+.login-modal i {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
 .location-modal-description {
     margin-bottom: 20px;
     color: #999;
