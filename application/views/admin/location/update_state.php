@@ -33,7 +33,10 @@
                     <label><?php echo trans("name"); ?></label>
                     <input type="text" class="form-control" name="name" value="<?php echo $state->name; ?>" placeholder="<?php echo trans("name"); ?>" maxlength="200" required>
                 </div>
-
+                <div class="form-group">
+                    <label><?php echo trans("name"); ?></label>
+                    <input type="text" class="form-control" name="name_rus" value="<?php echo $state->name_rus; ?>" placeholder="<?php echo trans("name"); ?>" maxlength="200" required>
+                </div>
             </div>
 
             <!-- /.box-body -->

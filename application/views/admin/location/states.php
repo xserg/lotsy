@@ -67,6 +67,7 @@
                             <th width="20"><?php echo trans('id'); ?></th>
                             <th><?php echo trans('name'); ?></th>
                             <th><?php echo trans('country'); ?></th>
+                            <th><?php echo trans('name'); ?></th>
                             <th><?php echo trans('options'); ?></th>
                         </tr>
                         </thead>
@@ -84,6 +85,7 @@
                                         <label class="label label-danger m-l-15"><?php echo trans("inactive"); ?></label>
                                     <?php endif; ?>
                                 </td>
+                                <td><?php echo html_escape($item->name_rus); ?></td>
                                 <td width="20%">
                                     <div class="dropdown">
                                         <button class="btn bg-purple dropdown-toggle btn-select-option"

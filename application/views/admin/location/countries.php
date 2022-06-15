@@ -54,6 +54,7 @@
                         <tr role="row">
                             <th width="20"><?php echo trans('id'); ?></th>
                             <th><?php echo trans('name'); ?></th>
+                            <th><?php echo trans('name'); ?></th>
                             <th><?php echo trans('status'); ?></th>
                             <th class="max-width-120"><?php echo trans('options'); ?></th>
                         </tr>
@@ -64,6 +65,7 @@
                             <tr>
                                 <td><?php echo html_escape($item->id); ?></td>
                                 <td><?php echo html_escape($item->name); ?></td>
+                                <td><?php echo html_escape($item->name_rus); ?></td>
                                 <td>
                                     <?php if ($item->status == 1): ?>
                                         <label class="label label-success"><?php echo trans("active"); ?></label>

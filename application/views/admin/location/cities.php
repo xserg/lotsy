@@ -85,6 +85,7 @@
                             <th><?php echo trans('name'); ?></th>
                             <th><?php echo trans('country'); ?></th>
                             <th><?php echo trans('state'); ?></th>
+                            <th><?php echo trans('name'); ?></th>
                             <th><?php echo trans('options'); ?></th>
                         </tr>
                         </thead>
@@ -96,6 +97,7 @@
                                 <td><?php echo html_escape($item->name); ?></td>
                                 <td><?php echo html_escape($item->country_name); ?></td>
                                 <td><?php echo html_escape($item->state_name); ?></td>
+                                <td><?php echo html_escape($item->name_rus); ?></td>
                                 <td width="20%">
                                     <div class="dropdown">
                                         <button class="btn bg-purple dropdown-toggle btn-select-option"

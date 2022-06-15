@@ -20,7 +20,11 @@
                     <input type="text" class="form-control" name="name" placeholder="<?php echo trans("name"); ?>"
                            value="<?php echo $country->name; ?>" maxlength="200" required>
                 </div>
-
+                <div class="form-group">
+                    <label><?php echo trans("name"); ?></label>
+                    <input type="text" class="form-control" name="name_rus" placeholder="<?php echo trans("name"); ?>"
+                           value="<?php echo $country->name_rus; ?>" maxlength="200" required>
+                </div>
                 <div class="form-group">
                     <label><?php echo trans("continent"); ?></label>
                     <select name="continent_code" class="form-control">

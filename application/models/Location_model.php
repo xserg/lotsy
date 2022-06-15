@@ -20,6 +20,7 @@ class Location_model extends CI_Model
     {
         $data = array(
             'name' => $this->input->post('name', true),
+            'name_rus' => $this->input->post('name_rus', true),
             'continent_code' => $this->input->post('continent_code', true),
             'status' => $this->input->post('status', true)
         );
@@ -44,6 +45,7 @@ class Location_model extends CI_Model
     {
         $data = array(
             'name' => $this->input->post('name', true),
+            'name_rus' => $this->input->post('name_rus', true),
             'country_id' => $this->input->post('country_id', true)
         );
 
@@ -248,6 +250,7 @@ class Location_model extends CI_Model
     {
         $data = array(
             'name' => $this->input->post('name', true),
+            'name_rus' => $this->input->post('name_rus', true),
             'country_id' => $this->input->post('country_id', true),
             'state_id' => $this->input->post('state_id', true)
         );
