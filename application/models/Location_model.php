@@ -82,9 +82,13 @@ class Location_model extends CI_Model
     }
 
     //get countries by continent
-    public function get_countries_by_continent($continent_code)
+    public function get_countries_by_continent($continent_code, $lamg = null)
     {
-        return $this->db->where('continent_code', clean_str($continent_code))->order_by('name')->get('location_countries')->result();
+      if($this->selected_lang->id == 2 || $lamg == 2) {
+        $this->db->select('id, name_rus name');
+      }
+      $this->db->where('status', 1)->order_by('name');
+      return $this->db->where('continent_code', clean_str($continent_code))->order_by('name')->get('location_countries')->result();
     }
 
     //get paginated countries
@@ -209,10 +213,10 @@ class Location_model extends CI_Model
     }
 
     //get states by country
-    public function get_states_by_country($country_id)
+    public function get_states_by_country($country_id, $lamg = null)
     {      
         
-        if($this->selected_lang->id == 2) {
+        if($this->selected_lang->id == 2 || $lamg == 2) {
             $this->db->select('id, country_id, name_rus name');
         }
         $this->db->where('country_id', clean_number($country_id));

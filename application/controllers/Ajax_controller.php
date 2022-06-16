@@ -542,7 +542,8 @@ class Ajax_controller extends Home_Core_Controller
     public function get_countries_by_continent()
     {
         $key = $this->input->post('key', true);
-        $countries = $this->location_model->get_countries_by_continent($key);
+        $lang = $this->input->post('lang', true);
+        $countries = $this->location_model->get_countries_by_continent($key, $lang);
         if (!empty($countries)) {
             foreach ($countries as $country) {
                 echo "<option value='" . $country->id . "'>" . html_escape($country->name) . "</option>";
@@ -554,7 +555,8 @@ class Ajax_controller extends Home_Core_Controller
     public function get_states_by_country()
     {
         $country_id = $this->input->post('country_id', true);
-        $states = $this->location_model->get_states_by_country($country_id);
+        $lang = $this->input->post('lang', true);
+        $states = $this->location_model->get_states_by_country($country_id, $lang);
         if (!empty($states)) {
             foreach ($states as $state) {
                 echo "<option value='" . $state->id . "'>" . html_escape($state->name) . "</option>";

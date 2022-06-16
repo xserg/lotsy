@@ -796,8 +796,13 @@ if (!function_exists('get_product_filter_id_by_key')) {
 
 //get continents
 if (!function_exists('get_continents')) {
-    function get_continents()
+    function get_continents($lang = null)
     {
+        if ($lang == 2) {
+          return array(
+            'EU' => 'Европа', 'AS' => 'Азия', 'AF' => 'Африка', 'NA' => 'Северная Америка', 'SA' => 'Южная Америка', 'OC' => 'Океания', //'AN' => 'Антарктика'
+        );  
+        }
         return array('EU' => 'Europe', 'AS' => 'Asia', 'AF' => 'Africa', 'NA' => 'North America', 'SA' => 'South America', 'OC' => 'Oceania', 'AN' => 'Antarctica');
     }
 }

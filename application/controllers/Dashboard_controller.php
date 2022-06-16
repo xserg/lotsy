@@ -1614,7 +1614,7 @@ class Dashboard_controller extends Home_Core_Controller
         $data['title'] = trans("add_shipping_zone");
         $data['description'] = trans("add_shipping_zone") . " - " . $this->app_name;
         $data['keywords'] = trans("add_shipping_zone") . "," . $this->app_name;
-        $data['continents'] = get_continents();
+        $data['continents'] = get_continents($this->selected_lang->id);
         $data['shipping_classes'] = $this->shipping_model->get_active_shipping_classes($this->auth_user->id);
 
         $this->load->view('dashboard/includes/_header', $data);
