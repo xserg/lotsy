@@ -235,9 +235,9 @@ foreach ($this->languages as $language): ?>
                         <div class="form-group">
                             <input type="text" name="email" class="form-control auth-form-input" placeholder="<?php echo trans("username"); ?> / <?php echo trans("email"); ?>" maxlength="255" required>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group password">
                             <input type="password" id="password" name="password" class="form-control auth-form-input" placeholder="<?php echo trans("password"); ?>" minlength="4" maxlength="255" required>
-                            <i class="fa fa-eye" id="togglePassword"></i>            
+                            <i class="fa fa-eye" id="togglePassword" onclick="togglePassword(this)"></i>            
                         </div>
                         <div class="form-group text-right">   
                             <a href="<?php echo generate_url("forgot_password"); ?>" class="link-forgot-password"><?php echo trans("forgot_password"); ?></a>

@@ -2273,21 +2273,13 @@ $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip();
 });
 
-
-const togglePassword = document.querySelector("#togglePassword");
-const password = document.querySelector("#password");
-
-togglePassword.addEventListener("click", function () {
+function togglePassword(e, id = '') {
+    const pass_id = '#password' + id;
+    const password = document.querySelector(pass_id);
     // toggle the type attribute
     const type = password.getAttribute("type") === "password" ? "text" : "password";
     password.setAttribute("type", type);
     
     // toggle the icon
-    this.classList.toggle("fa-eye-slash");
-});
-
-// prevent form submit
-const form = document.querySelector("form");
-form.addEventListener('submit', function (e) {
-    e.preventDefault();
-});
+    e.classList.toggle("fa-eye-slash");
+};

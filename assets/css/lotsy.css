@@ -7313,7 +7313,7 @@ img {
     right: 15px;
 }
 
-.login-modal i {
+.form-group.password i {
     position: absolute;
     top: 15px;
     right: 15px;

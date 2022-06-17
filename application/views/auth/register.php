@@ -38,11 +38,13 @@
                         <div class="form-group">
                             <input type="email" name="email" class="form-control auth-form-input" placeholder="<?php echo trans("email_address"); ?>" value="<?php echo old("email"); ?>" maxlength="255" required>
                         </div>
-                        <div class="form-group">
-                            <input type="password" name="password" class="form-control auth-form-input" placeholder="<?php echo trans("password"); ?>" value="<?php echo old("password"); ?>" minlength="8" maxlength="255" required>
+                        <div class="form-group password">
+                            <input type="password" id="password2" name="password" class="form-control auth-form-input" placeholder="<?php echo trans("password"); ?>" value="<?php echo old("password"); ?>" minlength="8" maxlength="255">
+                            <i class="fa fa-eye" onclick="togglePassword(this, 2)"></i>  
                         </div>
-                        <div class="form-group">
-                            <input type="password" name="confirm_password" class="form-control auth-form-input" placeholder="<?php echo trans("password_confirm"); ?>" maxlength="255" required>
+                        <div class="form-group password">
+                            <input type="password" id="password3" name="confirm_password" class="form-control auth-form-input" placeholder="<?php echo trans("password_confirm"); ?>" maxlength="255" required>
+                            <i class="fa fa-eye" onclick="togglePassword(this, 3)"></i>  
                         </div>
                         <div class="form-group m-t-5 m-b-20">
                             <div class="custom-control custom-checkbox custom-control-validate-input">
