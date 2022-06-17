@@ -246,7 +246,7 @@ foreach ($this->languages as $language): ?>
                             <button type="submit" class="btn btn-md btn-custom btn-block"><?php echo trans("login"); ?></button>
                         </div>
 
-                        <p class="p-social-media m-0 m-t-5"><?php echo trans("dont_have_account"); ?>&nbsp;<a href="<?php echo generate_url("register"); ?>" class="link"><?php echo trans("register"); ?></a></p>
+                        <p class="p-social-media m-0 m-t-5"><?php echo trans("dont_have_account"); ?> <a href="<?php echo generate_url("register"); ?>" class="link"><?php echo trans("register"); ?></a></p>
                     </form>
                     <!-- form end -->
                 </div>
