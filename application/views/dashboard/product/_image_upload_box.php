@@ -6,7 +6,10 @@
         </p>
         <p class="dm-upload-text"><?php echo trans("drag_drop_images_here"); ?>&nbsp;<span style="text-decoration: underline"><?php echo trans('browse_files'); ?></span></p>
         <a class='btn btn-md dm-btn-select-files'>
-            <input type="file" name="file" size="40" multiple="multiple">
+            <input type="file" name="file" id="file" size="40" multiple="multiple" 
+            <?php if (empty($modesy_images))
+                    echo "required"; ?>
+            />
         </a>
         <ul class="dm-uploaded-files" id="files-image">
             <?php if (!empty($modesy_images)):
@@ -101,6 +104,10 @@
                 });
                 ui_multi_update_file_status(id, 'success', 'Upload Complete');
                 ui_multi_update_file_progress(id, 100, 'success', false);
+              
+                file = $("#file");
+                file.value = id;
+                file.removeAttr("required");
             },
             onFileSizeError: function (file) {
                 $(".error-message-img-upload").html("<?php echo trans('file_too_large') . ' ' . formatSizeUnits($this->general_settings->max_file_size_image); ?>");
@@ -109,6 +116,7 @@
                 }, 4000);
             },
             onFileExtError: function (file) {
+              console.log('error');
                 $(".error-message-img-upload").html("<?php echo trans('invalid_file_type'); ?>");
                 setTimeout(function () {
                     $(".error-message-img-upload").empty();

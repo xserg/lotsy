@@ -23,14 +23,16 @@
                 <div class="alert-message-lg">
                     <?php $this->load->view('dashboard/includes/_messages'); ?>
                 </div>
+  
+                <?php echo form_open('add-product-post', ['id' => 'form_validate', 'onkeypress' => "return event.keyCode != 13;"]); ?>
+
                 <div class="row">
                     <div class="col-sm-12 m-b-30">
                         <label class="control-label"><?php echo trans("images"); ?></label>
                         <?php $this->load->view("dashboard/product/_image_upload_box"); ?>
                     </div>
                 </div>
-                <?php echo form_open('add-product-post', ['id' => 'form_validate', 'onkeypress' => "return event.keyCode != 13;"]); ?>
-                <input type="hidden" name="sys_lang_id" value="<?= $this->selected_lang->id; ?>">
+                    <input type="hidden" name="sys_lang_id" value="<?= $this->selected_lang->id; ?>">
                 <?php if ($this->general_settings->physical_products_system == 1 && $this->general_settings->digital_products_system == 0): ?>
                     <input type="hidden" name="product_type" value="physical">
                 <?php elseif ($this->general_settings->physical_products_system == 0 && $this->general_settings->digital_products_system == 1): ?>
