@@ -43,7 +43,7 @@
                                 <?php else: ?>
                                     <div class="row">
                                         <div class="col-12">
-                                            <?php echo form_open_multipart('start-selling', ['id' => 'form_validate', 'class' => 'validate_terms', 'onkeypress' => "return event.keyCode != 13;"]); ?>
+                                            <?php echo form_open_multipart($this->lang_base_url.'start-selling', ['id' => 'form_validate', 'class' => 'validate_terms', 'onkeypress' => "return event.keyCode != 13;"]); ?>
                                             <?php if (!empty($plan)): ?>
                                                 <input type="hidden" name="plan_id" value="<?php echo $plan->id; ?>">
                                             <?php endif; ?>
