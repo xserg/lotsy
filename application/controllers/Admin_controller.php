@@ -817,7 +817,7 @@ class Admin_controller extends Admin_Core_Controller
     {
         check_permission('general_settings');
         $email = $this->input->post('email', true);
-        $subject = "Modesy Test Email";
+        $subject = "Test Email";
         $message = "<p>This is a test email.</p>";
         $this->load->model("email_model");
         $this->session->set_flashdata('submit', "send_email");
