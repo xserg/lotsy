@@ -58,7 +58,7 @@
                 <?php echo form_open("edit-coupon-post"); ?>
                 <input type="hidden" name="id" value="<?= $coupon->id; ?>">
                 <div class="form-group">
-                    <label class="control-label"><?php echo trans("coupon_code"); ?>&nbsp;&nbsp;<small>(<?= trans("exp_special_characters"); ?> E.g: #, *, % ..)</small></label>
+                    <label class="control-label"><?php echo trans("coupon_code"); ?>&nbsp;&nbsp;<small>(<?= trans("exp_special_characters"); ?>)</small></label>
                     <div class="position-relative">
                         <input type="text" name="coupon_code" id="input_coupon_code" value="<?= html_escape($coupon->coupon_code); ?>" class="form-control form-input" placeholder="<?php echo trans("coupon_code"); ?>" maxlength="49" required>
                         <button type="button" class="btn btn-default btn-generate-sku" onclick="$('#input_coupon_code').val(Math.random().toString(36).substr(2,8).toUpperCase());"><?= trans("generate"); ?></button>
@@ -68,12 +68,12 @@
                     <label class="control-label"><?php echo trans("discount_rate"); ?></label>
                     <div class="input-group">
                         <span class="input-group-addon">%</span>
-                        <input type="number" name="discount_rate" id="input_discount_rate" value="<?= $coupon->discount_rate; ?>" aria-describedby="basic-addon-discount" class="form-control form-input" placeholder="E.g: 5" min="0" max="99" required>
+                        <input type="number" name="discount_rate" id="input_discount_rate" value="<?= $coupon->discount_rate; ?>" aria-describedby="basic-addon-discount" class="form-control form-input" placeholder="<?= trans("eg"); ?>: 5" min="0" max="99" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label"><?php echo trans("number_of_coupons"); ?>&nbsp;<small>(<?= trans("number_of_coupons_exp"); ?>)</small></label>
-                    <input type="number" name="coupon_count" value="<?= $coupon->coupon_count; ?>" class="form-control form-input" placeholder="E.g: 100" min="1" max="99999999" required>
+                    <input type="number" name="coupon_count" value="<?= $coupon->coupon_count; ?>" class="form-control form-input" placeholder="<?= trans("eg"); ?>: 100" min="1" max="99999999" required>
                 </div>
                 <div class="form-group">
                     <label class="font-600"><?php echo trans("minimum_order_amount"); ?>&nbsp;<small>(<?= trans("coupon_minimum_cart_total_exp"); ?>)</small></label>
