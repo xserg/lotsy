@@ -156,13 +156,15 @@
 </div>
 
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
-<script src="<?php echo base_url(); ?>assets/vendor/bootstrap-datetimepicker/moment.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/moment.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/ru.js"></script>
 <script src="<?php echo base_url(); ?>assets/vendor/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
 <script>
     //datetimepicker
     $(function () {
         $('#datetimepicker').datetimepicker({
-            format: 'YYYY-MM-DD HH:mm:ss'
+            format: 'YYYY-MM-DD HH:mm:ss',
+            locale: sys_lang_id == 1 ? 'en' : 'ru'
         });
     });
     $(document).on('change', '.category-checkbox', function () {
