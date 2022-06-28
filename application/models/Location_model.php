@@ -119,6 +119,9 @@ class Location_model extends CI_Model
     public function get_country($id)
     {
         $id = clean_number($id);
+        if($this->selected_lang->id == 2 || $lamg == 2) {
+          $this->db->select('id, name_rus name');
+        }
         $this->db->where('id', $id);
         $query = $this->db->get('location_countries');
         return $query->row();
@@ -207,6 +210,9 @@ class Location_model extends CI_Model
     public function get_state($id)
     {
         $id = clean_number($id);
+        if($this->selected_lang->id == 2 || $lamg == 2) {
+          $this->db->select('id, name_rus name');
+        }
         $this->db->where('id', $id);
         $query = $this->db->get('location_states');
         return $query->row();
@@ -326,6 +332,9 @@ class Location_model extends CI_Model
     public function get_city($id)
     {
         $id = clean_number($id);
+        if($this->selected_lang->id == 2 || $lamg == 2) {
+          $this->db->select('id, name_rus name');
+        }
         $this->db->where('id', $id);
         $query = $this->db->get('location_cities');
         return $query->row();
