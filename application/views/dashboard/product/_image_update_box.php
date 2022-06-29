@@ -7,7 +7,7 @@
         <p class="dm-upload-text"><?php echo trans("drag_drop_images_here"); ?>&nbsp;<span style="text-decoration: underline"><?php echo trans('browse_files'); ?></span></p>
 
         <a class='btn btn-md dm-btn-select-files'>
-            <input type="file" name="file" size="40" multiple="multiple">
+            <input type="file" name="file" id="file" size="40" multiple="multiple" <?php if (empty($modesy_images)) echo "required"; ?>>
         </a>
 
         <ul class="dm-uploaded-files" id="files-image">
@@ -107,6 +107,7 @@
                     document.getElementById("uploaderFile" + id).innerHTML = response;
                 }
             });
+            $("#file").removeAttr("required");
         },
         onUploadError: function (id, xhr, status, message) {
             if (message == "Not Acceptable") {

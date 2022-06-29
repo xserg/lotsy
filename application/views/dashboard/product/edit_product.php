@@ -26,13 +26,14 @@
                 <div class="alert-message-lg">
                     <?php $this->load->view('dashboard/includes/_messages'); ?>
                 </div>
+                <?php echo form_open('edit-product-post', ['id' => 'form_validate', 'class' => 'validate_price', 'onkeypress' => "return event.keyCode != 13;"]); ?>
+
                 <div class="row">
                     <div class="col-sm-12 m-b-30">
                         <label class="control-label"><?php echo trans("images"); ?></label>
                         <?php $this->load->view("dashboard/product/_image_update_box"); ?>
                     </div>
                 </div>
-                <?php echo form_open('edit-product-post', ['id' => 'form_validate', 'class' => 'validate_price', 'onkeypress' => "return event.keyCode != 13;"]); ?>
                 <input type="hidden" name="id" value="<?php echo $product->id; ?>">
                 <input type="hidden" name="sys_lang_id" value="<?= $this->selected_lang->id; ?>">
                 <?php if ($this->general_settings->physical_products_system == 1 && $this->general_settings->digital_products_system == 0): ?>

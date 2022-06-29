@@ -164,6 +164,8 @@ $(document).on('click', '.btn-delete-product-img-session', function () {
         data: data,
         success: function () {
             $('#uploaderFile' + file_id).remove();
+            if ($('#files-image li').length == 0)
+              $("#file").prop('required',true);
         }
     });
 });
