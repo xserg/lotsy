@@ -19,11 +19,6 @@
                 </a>
             </li>
         <?php endif; ?>
-        <li class="nav-item <?php echo ($active_tab == 'social_media') ? 'active' : ''; ?>">
-            <a class="nav-link" href="<?php echo generate_url("settings", "social_media"); ?>">
-                <span><?php echo trans("social_media"); ?></span>
-            </a>
-        </li>
         <li class="nav-item <?php echo ($active_tab == 'change_password') ? 'active' : ''; ?>">
             <a class="nav-link" href="<?php echo generate_url("settings", "change_password"); ?>">
                 <span><?php echo trans("change_password"); ?></span>
