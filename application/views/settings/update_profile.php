@@ -83,7 +83,10 @@
                             <label class="control-label"><?php echo trans("phone_number"); ?></label>
                             <input type="text" name="phone_number" class="form-control form-input" value="<?php echo html_escape($this->auth_user->phone_number); ?>" placeholder="<?php echo trans("phone_number"); ?>" maxlength="100">
                         </div>
-
+                        <div class="form-group">
+                            <label class="control-label"><?php echo trans("about_me"); ?></label>
+                            <input type="text" name="about_me" class="form-control form-input" value="<?php echo html_escape($this->auth_user->about_me); ?>" placeholder="<?php echo trans("about_me"); ?>" maxlength="100">
+                        </div>
                         <div class="form-group m-t-10">
                             <div class="row">
                                 <div class="col-12">

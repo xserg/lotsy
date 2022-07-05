@@ -19,13 +19,13 @@
                     <span class="last-seen <?php echo (is_user_online($user->last_seen)) ? 'last-seen-online' : ''; ?>"> <i class="icon-circle"></i> <?php echo trans("last_seen"); ?>&nbsp;<?php echo time_ago($user->last_seen); ?></span>
                 </p>
             </div>
-            <?php if (is_vendor()): ?>
+            <?php //if (is_vendor()): ?>
                 <div class="row-custom">
                     <p class="description">
                         <?php echo html_escape($user->about_me); ?>
                     </p>
                 </div>
-            <?php endif; ?>
+            <?php //endif; ?>
 
             <div class="row-custom user-contact">
                 <span class="info"><?php echo trans("member_since"); ?>&nbsp;<?php echo helper_date_format($user->created_at, false); ?></span>
