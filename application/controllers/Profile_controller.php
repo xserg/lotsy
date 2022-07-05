@@ -264,7 +264,8 @@ class Profile_controller extends Home_Core_Controller
                 'show_email' => $this->input->post('show_email', true),
                 'show_phone' => $this->input->post('show_phone', true),
                 'show_location' => $this->input->post('show_location', true),
-                'about_me' => $this->input->post('about_me', true)
+                'about_me' => $this->input->post('about_me', true),
+                'show_follow' => $this->input->post('show_follow', true),
             );
 
             //is email unique
