@@ -4,13 +4,13 @@
     <label><?php echo trans("share"); ?>:</label>
     <ul>
         <li>
-            <a href="javascript:void(0)" onclick='window.open("https://www.facebook.com/sharer/sharer.php?u=<?php echo generate_product_url($product); ?>", "Share This Post", "width=640,height=450");return false'>
-                <i class="icon-facebook"></i>
+            <a href="javascript:void(0)" onclick='window.open("https://vk.com/share.php?url=<?php echo generate_product_url($product); ?>", "Share This Post", "width=640,height=450");return false'>
+                <i class="icon-vk"></i>
             </a>
         </li>
         <li>
-            <a href="javascript:void(0)" onclick='window.open("https://twitter.com/share?url=<?php echo generate_product_url($product); ?>&amp;text=<?php echo get_product_title($product); ?>", "Share This Post", "width=640,height=450");return false'>
-                <i class="icon-twitter"></i>
+            <a href="javascript:void(0)" onclick='window.open("https://t.me/share/url?url=<?php echo generate_product_url($product); ?>&amp;text=<?php echo get_product_title($product); ?>", "Share This Post", "width=640,height=450");return false'>
+                <i class="icon-telegram"></i>
             </a>
         </li>
         <li>
@@ -23,11 +23,7 @@
                 <i class="icon-pinterest"></i>
             </a>
         </li>
-        <li>
-            <a href="javascript:void(0)" onclick='window.open("http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo generate_product_url($product); ?>", "Share This Post", "width=640,height=450");return false'>
-                <i class="icon-linkedin"></i>
-            </a>
-        </li>
+        
     </ul>
 </div>
 
