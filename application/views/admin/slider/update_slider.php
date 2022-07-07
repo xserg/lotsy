@@ -45,8 +45,8 @@
 				<div class="row row-form">
 					<div class="col-sm-12 col-md-6 col-form">
 						<div class="form-group">
-							<label class="control-label"><?php echo trans('order'); ?></label>
-							<input type="number" class="form-control" name="item_order" placeholder="<?php echo trans('order'); ?>" value="<?php echo $item->item_order; ?>" <?php echo ($this->rtl == true) ? 'dir="rtl"' : ''; ?>>
+							<label class="control-label"><?php echo trans('sort'); ?></label>
+							<input type="number" class="form-control" name="item_order" placeholder="<?php echo trans('sort'); ?>" value="<?php echo $item->item_order; ?>" <?php echo ($this->rtl == true) ? 'dir="rtl"' : ''; ?>>
 						</div>
 					</div>
 					<div class="col-sm-12 col-md-6 col-form">

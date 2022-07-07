@@ -47,8 +47,8 @@
                 <div class="row row-form">
                     <div class="col-sm-12 col-md-6 col-form">
                         <div class="form-group">
-                            <label class="control-label"><?php echo trans('order'); ?></label>
-                            <input type="number" class="form-control" name="item_order" placeholder="<?php echo trans('order'); ?>"
+                            <label class="control-label"><?php echo trans('sort'); ?></label>
+                            <input type="number" class="form-control" name="item_order" placeholder="<?php echo trans('sort'); ?>"
                                    value="<?php echo old('item_order'); ?>" <?php echo ($this->rtl == true) ? 'dir="rtl"' : ''; ?>>
                         </div>
                     </div>
@@ -172,7 +172,7 @@
                                     <th width="20"><?php echo trans('id'); ?></th>
                                     <th><?php echo trans('image'); ?></th>
                                     <th><?php echo trans('language'); ?></th>
-                                    <th><?php echo trans('order'); ?></th>
+                                    <th><?php echo trans('sort'); ?></th>
                                     <th class="th-options"><?php echo trans('options'); ?></th>
                                 </tr>
                                 </thead>

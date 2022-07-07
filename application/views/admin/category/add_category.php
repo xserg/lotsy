@@ -56,8 +56,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label><?php echo trans('order'); ?></label>
-                    <input type="number" class="form-control" name="category_order" placeholder="<?php echo trans('order'); ?>"
+                    <label><?php echo trans('sort'); ?></label>
+                    <input type="number" class="form-control" name="category_order" placeholder="<?php echo trans('sort'); ?>"
                            value="<?php echo old('category_order'); ?>" min="1" max="99999" required>
                 </div>
 

@@ -51,8 +51,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label><?php echo trans('order'); ?></label>
-                    <input type="number" class="form-control" name="category_order" placeholder="<?php echo trans('order'); ?>" value="<?= $category->category_order; ?>" min="1" <?php echo ($this->rtl == true) ? 'dir="rtl"' : ''; ?> style="max-width: 300px;">
+                    <label><?php echo trans('sort'); ?></label>
+                    <input type="number" class="form-control" name="category_order" placeholder="<?php echo trans('sort'); ?>" value="<?= $category->category_order; ?>" min="1" <?php echo ($this->rtl == true) ? 'dir="rtl"' : ''; ?> style="max-width: 300px;">
                 </div>
             </div>
             <!-- /.box-body -->

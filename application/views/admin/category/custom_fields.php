@@ -32,7 +32,7 @@
                                     <th><?php echo trans('type'); ?></th>
                                     <th>&nbsp;</th>
                                     <th><?php echo trans('required'); ?></th>
-                                    <th><?php echo trans('order'); ?></th>
+                                    <th><?php echo trans('sort'); ?></th>
                                     <th><?php echo trans('status'); ?></th>
                                     <th class="th-options"><?php echo trans('options'); ?></th>
                                 </tr>

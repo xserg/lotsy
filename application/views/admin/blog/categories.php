@@ -49,8 +49,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label><?php echo trans('order'); ?></label>
-                    <input type="number" class="form-control" name="category_order" placeholder="<?php echo trans('order'); ?>"
+                    <label><?php echo trans('sort'); ?></label>
+                    <input type="number" class="form-control" name="category_order" placeholder="<?php echo trans('sort'); ?>"
                            value="1" min="1" <?php echo ($this->rtl == true) ? 'dir="rtl"' : ''; ?> required>
                 </div>
             </div>
@@ -88,7 +88,7 @@
                                     <th width="20"><?php echo trans('id'); ?></th>
                                     <th><?php echo trans('category_name'); ?></th>
                                     <th><?php echo trans('language'); ?></th>
-                                    <th><?php echo trans('order'); ?></th>
+                                    <th><?php echo trans('sort'); ?></th>
                                     <th class="th-options"><?php echo trans('options'); ?></th>
                                 </tr>
                                 </thead>

@@ -114,8 +114,8 @@ $ed_langs[] = array("short" => "cy", "name" => "Welsh"); ?>
                 </div>
 
                 <div class="form-group">
-                    <label><?php echo trans('order'); ?></label>
-                    <input type="number" class="form-control" name="language_order" placeholder="<?php echo trans('order'); ?>"
+                    <label><?php echo trans('sort'); ?></label>
+                    <input type="number" class="form-control" name="language_order" placeholder="<?php echo trans('sort'); ?>"
                            value="<?php echo $language->language_order; ?>" min="1" <?php echo ($this->rtl == true) ? 'dir="rtl"' : ''; ?> required>
                 </div>
 

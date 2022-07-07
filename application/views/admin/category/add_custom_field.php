@@ -72,8 +72,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label><?php echo trans('order'); ?></label>
-                            <input type="number" class="form-control" name="field_order" placeholder="<?php echo trans('order'); ?>" min="1" max="99999" value="1" required>
+                            <label><?php echo trans('sort'); ?></label>
+                            <input type="number" class="form-control" name="field_order" placeholder="<?php echo trans('sort'); ?>" min="1" max="99999" value="1" required>
                         </div>
 
                         <div class="form-group">

@@ -51,8 +51,8 @@
 
 
                 <div class="form-group">
-                    <label><?php echo trans('order'); ?></label>
-                    <input type="number" class="form-control" name="category_order" placeholder="<?php echo trans('order'); ?>"
+                    <label><?php echo trans('sort'); ?></label>
+                    <input type="number" class="form-control" name="category_order" placeholder="<?php echo trans('sort'); ?>"
                            value="<?php echo html_escape($category->category_order); ?>" min="1" <?php echo ($this->rtl == true) ? 'dir="rtl"' : ''; ?> required>
                 </div>
             </div>

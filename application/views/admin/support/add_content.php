@@ -55,8 +55,8 @@ $lang_id = input_get('lang'); ?>
                     </div>
 
                     <div class="form-group">
-                        <label><?php echo trans('order'); ?></label>
-                        <input type="number" class="form-control" name="content_order" placeholder="<?php echo trans('order'); ?>" value="1" min="1" <?php echo ($this->rtl == true) ? 'dir="rtl"' : ''; ?> style="max-width: 600px;">
+                        <label><?php echo trans('sort'); ?></label>
+                        <input type="number" class="form-control" name="content_order" placeholder="<?php echo trans('sort'); ?>" value="1" min="1" <?php echo ($this->rtl == true) ? 'dir="rtl"' : ''; ?> style="max-width: 600px;">
                     </div>
 
                     <div class="form-group" style="margin-top: 30px;">
