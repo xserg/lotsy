@@ -31,6 +31,7 @@
                 <div class="profile-tab-content">
                     <div class="row row-follower">
                         <?php if (!empty($following_users)):
+                          if((isset($this->auth_user) &&  $this->auth_user->id == $user->id) || $user->show_follow == 1):
                             foreach ($following_users as $item): ?>
                                 <div class="col-3 col-sm-2">
                                     <div class="follower-item">
@@ -43,6 +44,7 @@
                                     </div>
                                 </div>
                             <?php endforeach;
+                          endif;
                         else:?>
                             <div class="col-12">
                                 <p class="text-center text-muted"><?php echo trans("no_records_found"); ?></p>
