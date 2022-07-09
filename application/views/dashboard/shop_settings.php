@@ -69,7 +69,7 @@
                         </div>
                     </div>
                 </div>
-
+                  <input type="hidden" name="sys_lang_id" value="<?= $this->selected_lang->id; ?>">
                 <div class="form-group text-right">
                     <button type="submit" name="submit" value="update" class="btn btn-md btn-success"><?php echo trans("save_changes") ?></button>
                 </div>
