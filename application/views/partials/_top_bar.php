@@ -16,6 +16,7 @@
                                 <?php endif;
                             endforeach;
                         endif; ?>
+                        <li class="nav-item"><a href="<?= generate_url('help_center'); ?>" class="nav-link"><?= trans("help_center"); ?></a></li>
                     </ul>
                 <?php endif; ?>
             </div>

@@ -36,7 +36,6 @@
                                                 <?php endif;
                                             endforeach;
                                         endif; ?>
-                                        <li><a href="<?= generate_url('help_center'); ?>"><?= trans("help_center"); ?></a></li>
                                     </ul>
                                 </div>
                             </div>
