@@ -38,7 +38,7 @@
 											</div>
 											<div class="right">
 												<div class="row-custom">
-													<strong class="username"><?php echo html_escape($user->username); ?></strong>
+													<a href="<?php echo generate_profile_url($user->slug); ?>"><strong class="username"><?php echo html_escape($user->username); ?></strong></a>
 													<label class="badge badge-success badge-new"><?php echo trans("new_message"); ?></label>
 												</div>
 												<div class="row-custom m-b-0">
@@ -93,10 +93,10 @@
 						<div class="row-custom messages-head">
 							<div class="sender-head">
 								<div class="left">
-									<img src="<?php echo get_user_avatar($profile); ?>" alt="<?php echo html_escape($profile->username); ?>" class="img-profile">
+									<a href="<?php echo generate_profile_url($user->slug); ?>"><img src="<?php echo get_user_avatar($profile); ?>" alt="<?php echo html_escape($profile->username); ?>" class="img-profile"></a>
 								</div>
 								<div class="right">
-									<strong class="username"><?php echo html_escape($profile->username); ?></strong>
+									<strong class="username"><a href="<?php echo generate_profile_url($user->slug); ?>"><?php echo html_escape($profile->username); ?></a></strong>
 									<p class="p-last-seen">
 										<span class="last-seen <?php echo (is_user_online($profile->last_seen)) ? 'last-seen-online' : ''; ?>"> <i class="icon-circle"></i> <?php echo trans("last_seen"); ?>&nbsp;<?php echo time_ago($profile->last_seen); ?></span>
 									</p>
