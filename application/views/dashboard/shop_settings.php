@@ -17,7 +17,7 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label"><?php echo trans("shop_description"); ?></label>
-                    <textarea name="about_me" class="form-control form-textarea" placeholder="<?php echo trans("shop_description"); ?>"><?= html_escape($this->auth_user->about_me); ?></textarea>
+                    <textarea name="about_me" class="form-control form-textarea" placeholder="<?php echo trans("shop_description"); ?>" maxlength="150"><?= html_escape($this->auth_user->about_me); ?></textarea>
                 </div>
                 <?php if ($this->general_settings->rss_system == 1): ?>
                     <div class="form-group">
