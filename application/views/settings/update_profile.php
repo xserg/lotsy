@@ -1,4 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
+
+<link rel="stylesheet" href="/assets/css/intlTelInput.css">
+
 <!-- Wrapper -->
 <div id="wrapper">
     <div class="container">
@@ -29,7 +32,7 @@
                         <!-- include message block -->
                         <?php $this->load->view('partials/_messages'); ?>
 
-                        <?php echo form_open_multipart("update-profile-post", ['id' => 'form_validate']); ?>
+                        <?php echo form_open_multipart("update-profile-post", ['id' => 'form_validate',  'class' => 'validate_phone']); ?>
                         <div class="form-group">
                             <p>
                                 <img src="<?php echo get_user_avatar($user); ?>" alt="<?php echo $user->username; ?>" class="form-avatar">
@@ -80,9 +83,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label"><?php echo trans("phone_number"); ?></label>
-                            <input type="text" name="phone_number" class="form-control form-input" value="<?php echo html_escape($this->auth_user->phone_number); ?>" placeholder="<?php echo trans("phone_number"); ?>" maxlength="100">
-                        </div>
+                            <label class="control-label"><?php echo trans("phone_number"); ?></label><br>
+                            <input type="text" type="tel" id="phone"  name="phone_number" class="custom-control-validate-input" value="<?php echo html_escape($this->auth_user->phone_number); ?>">
+                            <br><span id="error-msg" class="text-danger hide"></span>
+                        </div>                        
                         <div class="form-group">
                             <label class="control-label"><?php echo trans("about_me"); ?></label>
                             <input type="text" name="about_me" class="form-control form-input" value="<?php echo html_escape($this->auth_user->about_me); ?>" placeholder="<?php echo trans("about_me"); ?>" maxlength="150">
@@ -142,4 +146,33 @@
     </div>
 </div>
 <!-- Wrapper End-->
+
+<script src="/assets/js/intlTelInput.js"></script>
+<script>
+  var input = document.querySelector("#phone");
+  var iti = window.intlTelInput(input, {
+    // allowDropdown: false,
+    //autoHideDialCode: true,
+    //autoPlaceholder: "off",
+    // dropdownContainer: document.body,
+    // excludeCountries: ["us"],
+    // formatOnDisplay: false,
+    // geoIpLookup: function(callback) {
+    //   $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+    //     var countryCode = (resp && resp.country) ? resp.country : "";
+    //     callback(countryCode);
+    //   });
+    // },
+    // hiddenInput: "full_number",
+    initialCountry: "ru",
+    // localizedCountries: { 'de': 'Deutschland' },
+    nationalMode: true,
+    // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+    //placeholderNumberType: "MOBILE",
+    // preferredCountries: ['cn', 'jp'],
+    separateDialCode: true,
+    utilsScript: "/assets/js/utils.js",
+  });
+  
+</script>
 

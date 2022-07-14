@@ -2283,3 +2283,26 @@ function togglePassword(e, id = '') {
     // toggle the icon
     e.classList.toggle("fa-eye-slash");
 };
+
+$(document).ready(function () {
+    $('.validate_phone').submit(function (e) { 
+      var isValid = iti.isValidNumber();
+      var errorMsg = $("#error-msg");
+      // here, the index maps to the error code returned from getValidationError - see readme
+      var errorMap = {1: "Invalid number format!", 2: "Неверный формат номера!"};
+      var sys_lang_id = $("input[name='sys_lang_id']").val();
+      var number = iti.getNumber();
+      if (!isValid) {
+          e.preventDefault();        
+          input.classList.add("error");
+          var errorCode = iti.getValidationError();
+          errorMsg.html(errorMap[sys_lang_id]);
+          errorMsg.removeClass("hide");
+          //$('.custom-control-validate-input').append("<span class='text-danger'>" + mds_config.msg_accept_terms + "</span>");
+      } else {
+          $("#phone").val(number);
+          $('.custom-control-validate-input').removeClass('custom-control-validate-error');
+      }
+            
+    });
+});

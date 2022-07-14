@@ -578,7 +578,7 @@ class Home_controller extends Home_Core_Controller
         }
         
         $this->form_validation->set_rules('phone_number', trans("phone_number"), 
-        'required|numeric|max_length[10]',
+        'required|max_length[17]',
         array('numeric' => trans('form_validation_numeric'))
         );
         $this->form_validation->set_rules('shop_name', trans("shop_name"), 'required');

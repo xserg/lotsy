@@ -43,7 +43,7 @@
                                 <?php else: ?>
                                     <div class="row">
                                         <div class="col-12">
-                                            <?php echo form_open_multipart($this->lang_base_url.'start-selling', ['id' => 'form_validate', 'class' => 'validate_terms', 'onkeypress' => "return event.keyCode != 13;"]); ?>
+                                            <?php echo form_open_multipart($this->lang_base_url.'start-selling', ['id' => 'form_validate', 'class' => 'validate_terms validate_phone', 'onkeypress' => "return event.keyCode != 13;"]); ?>
                                             <?php if (!empty($plan)): ?>
                                                 <input type="hidden" name="plan_id" value="<?php echo $plan->id; ?>">
                                             <?php endif; ?>
@@ -69,8 +69,9 @@
                                                                 <input type="text" name="last_name" class="form-control form-input" value="<?php echo html_escape($last_name); ?>" placeholder="<?php echo trans("last_name"); ?>">
                                                             </div>
                                                             <div class="col-12 col-sm-4 m-b-15">
-                                                                <label class="control-label"><?php echo trans("phone_number"); ?></label>
-                                                                <input type="text" name="phone_number" class="form-control form-input" value="<?php echo html_escape($phone_number); ?>" placeholder="<?php echo trans("phone_number"); ?>">
+                                                                <label class="control-label"><?php echo trans("phone_number"); ?></label><br>
+                                                                <input type="text" type="tel" id="phone"  name="phone_number" class="custom-control-validate-input" value="<?php echo html_escape($this->auth_user->phone_number); ?>">
+                                                                <br><span id="error-msg" class="text-danger hide"></span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -148,3 +149,21 @@
         </div>
     </div>
 </div>
+<link rel="stylesheet" href="/assets/css/intlTelInput.css">
+<script src="/assets/js/intlTelInput.js"></script>
+<script>
+  var input = document.querySelector("#phone");
+  if (input) {
+  var iti = window.intlTelInput(input, {
+    //autoHideDialCode: true,
+    nationalMode: true,
+    onlyCountries: ['ru'],
+    placeholderNumberType: "MOBILE",
+    // preferredCountries: ['cn', 'jp'],
+    initialCountry: "ru",
+    separateDialCode: true,
+    utilsScript: "/assets/js/utils.js",
+  });
+  }
+  
+</script>
